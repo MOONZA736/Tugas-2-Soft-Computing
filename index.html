@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Soft Computing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="header-background">
+        <header>
+            <h1>Aplikasi Soft Computing</h1>
+        </header>
+    </div>
+
+    <div class="content-box">
+        <div class="nav-tabs">
+                        <button class="tab-button active" data-tab="tugas1" id="tugas1-tab">Tugas 1</button>
+            
+                        <button class="tab-button" data-tab="tugas2" id="tugas2-tab">Tugas 2</button>
+            
+                        <button class="tab-button" data-tab="tugas3" id="tugas3-tab">Tugas 3</button>
+        </div>
+
+        <div id="tab-content-container">
+
+            <div class="main-content tab-pane active-content" data-tab-content="tugas1">
+                <h2>Tugas 1 — Pengantar Soft Computing</h2>
+                <p>Soft Computing adalah cabang kecerdasan buatan yang berfokus pada kemampuan sistem untuk menangani ketidakpastian, toleransi terhadap kesalahan, dan fleksibilitas dalam pengambilan keputusan. Berikut tiga algoritma utamanya:</p>
+
+                <div class="algoritma-buttons">
+                    <button onclick="loadMateri('fuzzy', this)" class="alg-button active-alg">Algoritma Fuzzy</button>
+                    <button onclick="loadMateri('jst', this)" class="alg-button">Jaringan Syaraf Tiruan</button>
+                    <button onclick="loadMateri('genetika', this)" class="alg-button">Algoritma Genetika</button>
+                </div>
+                
+                <hr class="alg-separator">
+
+                <main id="content-area">
+                </main>
+            </div>
+
+            <div class="main-content tab-pane" data-tab-content="tugas2">
+                <div id="tugas2-container">
+                    <h2 class="text-center text-muted">Memuat konten Tugas 2...</h2>
+                </div>
+            </div>
+
+            <div class="main-content tab-pane" data-tab-content="tugas3">
+                <h2>Tugas 3 — (Konten Kosong)</h2>
+                <p>Ditunggu ya!</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Aplikasi Berbasis Flask</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        loadMateri('fuzzy', document.querySelector('.alg-button.active-alg')); 
+    </script>
+</body>
+</html>
